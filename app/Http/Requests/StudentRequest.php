@@ -11,7 +11,7 @@ class StudentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name_student' => 'bail|required|alpha',
+            //'email_student' => 'bail|required|email',
+            //'password_student '=> 'bail|required|between:4,10'
         ];
     }
 }

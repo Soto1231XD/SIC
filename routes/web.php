@@ -35,6 +35,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('estudiantes',StudentController::class);
 
+    Route::delete('estudiantes/{id}', [StudentController::class, 'destroy'])->name('estudiantes.destroy');
+
     Route::get('/formulario', function () {
         return view('formulario');
     })->name('formulario');

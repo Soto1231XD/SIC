@@ -18,7 +18,7 @@
                     
                     <!-- New Maestros Button -->
                     <x-nav-link :href="url('/maestros')" :active="request()->routeIs('maestros.index')">
-                        {{ __('Maestros') }}
+                        {{ __('Calificaciones') }}
                     </x-nav-link>
                 </div>
             </div>

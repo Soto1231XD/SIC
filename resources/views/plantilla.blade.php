@@ -19,7 +19,10 @@
         <div class="flex items-center">
             <i class="fa-solid fa-envelope fa-xl text-white mr-4"></i>
             <i class="fa-solid fa-bell fa-xl text-white mr-4"></i>
-            <button class="text-white font-bold bg-blue-500 hover:bg-blue-400 transition-colors px-4 py-2 rounded-md">Cerrar sesión</button>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="text-white font-bold bg-blue-500 hover:bg-blue-400 transition-colors px-4 py-2 rounded-md">Cerrar sesión</button>
+            </form>
         </div>
     </nav>
     
@@ -29,8 +32,8 @@
             <ul class="p-4">
                 <li>
                     <a href="{{ url('/maestros') }}" class="flex items-center py-2 transition duration-500 ease-in-out hover:bg-blue-500 hover:text-white">
-                        <span class="mr-14">Inicio</span>
-                        <i class="fa-solid fa-house"></i>
+                        <span class="mr-4">Calificaciones</span>
+                        <i class="fa-solid fa-chart-simple"></i>
                     </a>
                 </li>
                 <li>
@@ -66,12 +69,10 @@
                 </li>
                 <li>
                     <a href="{{ route('estudiantes.create') }}" class="flex items-center py-2 transition duration-500 ease-in-out hover:bg-blue-500 hover:text-white">
-                        <span class="mr-12">Crear estudiante</span>
+                        <span class="mr-4">Crear estudiante</span>
                         <i class="fas fa-graduation-cap"></i>
                     </a>
                 </li>
-                
-                
             </ul>
         </aside>
         
@@ -82,6 +83,8 @@
             @yield('crear_estudiante')
 
             @yield('table_students')
+
+            @yield('edit_estudiante')
         
         </main>
     </div>

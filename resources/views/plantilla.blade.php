@@ -73,6 +73,12 @@
                         <i class="fas fa-graduation-cap"></i>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('asignaturas') }}" class="flex items-center py-2 transition duration-500 ease-in-out hover:bg-blue-500 hover:text-white">
+                        <span class="mr-12">Asignatura</span>
+                        <i class="fa-solid fa-file-contract"></i>
+                    </a>
+                </li>
             </ul>
         </aside>
         
@@ -85,6 +91,8 @@
             @yield('table_students')
 
             @yield('edit_estudiante')
+
+            @yield('content')
         
         </main>
     </div>

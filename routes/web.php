@@ -7,6 +7,8 @@ use App\Http\Controllers\DocentesController;
 
     use App\Http\Controllers\StudentController;
 
+    use App\Http\Controllers\SubjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('estudiantes',StudentController::class);
 
     Route::delete('estudiantes/{id}', [StudentController::class, 'destroy'])->name('estudiantes.destroy');
+
+    Route::resource('estudiantes', StudentController::class);
+    Route::resource('asignaturas', SubjectController::class);
+    
 
     Route::get('/formulario', function () {
         return view('formulario');
